@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+
+/* ===== CUSTOM THEME ===== */
+@layer base {
+  :root {
+    --primary: #2C4A52;
+    --secondary: #F5E8C7;
+    --accent: #D4A017;
+    --text: #333333;
+    --text-light: #666666;
+    --bg: #FAF9F6;
+    --card-bg: #FFFFFF;
+  }
+
+  .dark {
+    --primary: #F5E8C7;
+    --secondary: #2C4A52;
+    --accent: #FFD700;
+    --text: #FAF9F6;
+    --text-light: #D4D4D4;
+    --bg: #1A1A1A;
+    --card-bg: #2D2D2D;
+  }
+}
+
+@layer components {
+  .bookish-gradient {
+    @apply bg-gradient-to-br from-[var(--bg)] via-[var(--secondary)]/20 to-[var(--bg)];
+  }
+
+  .bookish-spinner {
+    @apply border-4 border-[var(--accent)] border-t-transparent rounded-full animate-spin;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] hover:shadow-lg transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 rounded-full font-semibold border-2 border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all duration-300;
+  }
+}
