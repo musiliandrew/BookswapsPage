@@ -186,9 +186,9 @@ function HomePage() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5 }}
-      className="absolute top-4 right-4 z-30 bg-gradient-to-r from-[#D4A017] to-[#456A76] px-4 py-2 rounded-full shadow-lg"
+      className="absolute top-2 right-2 sm:top-4 sm:right-4 z-30 bg-gradient-to-r from-[#D4A017] to-[#456A76] px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-lg"
     >
-      <span className="text-white font-['Lora'] font-semibold text-sm md:text-base">
+      <span className="text-white font-['Lora'] font-semibold text-xs sm:text-sm md:text-base">
         Coming Soon
       </span>
     </Motion.div>
@@ -201,10 +201,9 @@ function HomePage() {
       <nav className="hidden md:flex justify-between items-center px-8 py-4 w-full bg-[hsl(49,52%,88%)] shadow-lg">
         <div className="flex items-center space-x-3">
           <img
-            src="/assets/icons/AppLogo.svg"
+            src="/AppLogo.svg"
             alt="BookSwaps Logo"
             className="w-10 h-10"
-            onError={(e) => (e.currentTarget.style.display = 'none')}
           />
           <h1 className="text-3xl font-bold font-['Lora'] text-[#456A76]">
             BookSwaps
@@ -232,24 +231,23 @@ function HomePage() {
       </nav>
 
       {/* ==== NAVBAR (Mobile) ==== */}
-      <nav className="md:hidden flex justify-between items-center px-4 py-4 w-full bg-[hsl(49,52%,88%)] shadow-lg">
-        <div className="flex items-center space-x-3">
+      <nav className="md:hidden flex justify-between items-center px-3 py-3 w-full bg-[hsl(49,52%,88%)] shadow-lg">
+        <div className="flex items-center space-x-2">
           <img
-            src="/assets/icons/AppLogo.svg"
+            src="/AppLogo.svg"
             alt="BookSwaps Logo"
-            className="w-8 h-8"
-            onError={(e) => (e.currentTarget.style.display = 'none')}
+            className="w-7 h-7"
           />
-          <h1 className="text-xl font-bold font-['Lora'] text-[#456A76]">
+          <h1 className="text-lg font-bold font-['Lora'] text-[#456A76]">
             BookSwaps
           </h1>
         </div>
 
-        <div className="flex items-center space-x-2">
-          <LoginCTA className="px-3 py-1.5 text-sm font-['Lora'] font-semibold text-[#456A76] border-2 border-[#456A76] rounded-full hover:bg-[#456A76] hover:text-white transition-all" />
-          <SignupCTA className="px-3 py-1.5 text-sm font-['Lora'] font-semibold text-white bg-gradient-to-r from-[#456A76] to-[#D4A017] rounded-full transition-all" />
+        <div className="flex items-center space-x-1.5">
+          <LoginCTA className="px-2.5 py-1.5 text-xs font-['Lora'] font-semibold text-[#456A76] border-2 border-[#456A76] rounded-full hover:bg-[#456A76] hover:text-white transition-all" />
+          <SignupCTA className="px-2.5 py-1.5 text-xs font-['Lora'] font-semibold text-white bg-gradient-to-r from-[#456A76] to-[#D4A017] rounded-full transition-all" />
         </div>
-        
+
       </nav>
 
       {/* ==== HERO + COMING-SOON BADGE ==== */}
@@ -262,18 +260,18 @@ function HomePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="max-w-4xl mx-auto px-4 -mt-8 md:-mt-12 relative z-20"
+          className="max-w-4xl mx-auto px-3 sm:px-4 -mt-6 sm:-mt-8 md:-mt-12 relative z-20"
         >
-          <div className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-2xl border-2 border-[#D4A017]/30">
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <span className="text-xs md:text-sm font-semibold text-[#D4A017] bg-[#D4A017]/10 px-3 py-1 rounded-full">
+          <div className="bg-white/95 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl shadow-2xl border-2 border-[#D4A017]/30">
+            <div className="flex items-center justify-center gap-2 mb-2 sm:mb-3">
+              <span className="text-xs sm:text-sm font-semibold text-[#D4A017] bg-[#D4A017]/10 px-2.5 sm:px-3 py-1 rounded-full">
                 V2.0 Preview
               </span>
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold font-['Lora'] text-[#456A76] text-center mb-3">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-['Lora'] text-[#456A76] text-center mb-2 sm:mb-3">
               Meet SenecaAI
             </h3>
-            <p className="text-base md:text-lg text-[#456A76]/80 text-center">
+            <p className="text-sm sm:text-base md:text-lg text-[#456A76]/80 text-center leading-relaxed">
               Your personal book philosopher companion. Get insights, summaries, and let AI help you understand and write about your favorite reads.
             </p>
           </div>
@@ -281,11 +279,11 @@ function HomePage() {
       </div>
 
       {/* ==== FEATURES ==== */}
-      <section className="py-8 md:py-16 px-4 mt-8">
-        <h2 className="text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-2">
+      <section className="py-6 sm:py-8 md:py-16 px-3 sm:px-4 mt-6 sm:mt-8">
+        <h2 className="text-lg sm:text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-2">
           What's Coming
         </h2>
-        <p className="text-center text-[var(--primary)]/60 mb-6 md:mb-8 text-sm md:text-base">
+        <p className="text-center text-[var(--primary)]/60 mb-4 sm:mb-6 md:mb-8 text-xs sm:text-sm md:text-base">
           Features we're building for book lovers like you
         </p>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -304,11 +302,11 @@ function HomePage() {
       </section>
 
       {/* ==== TRENDING BOOKS ==== */}
-      <section className="py-8 md:py-16 px-4 bg-[var(--secondary)]">
-        <h2 className="text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-2">
+      <section className="py-6 sm:py-8 md:py-16 px-3 sm:px-4 bg-[var(--secondary)]">
+        <h2 className="text-lg sm:text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-2">
           Explore Trending Books
         </h2>
-        <p className="text-center text-[var(--primary)]/60 mb-6 md:mb-8 text-sm md:text-base">
+        <p className="text-center text-[var(--primary)]/60 mb-4 sm:mb-6 md:mb-8 text-xs sm:text-sm md:text-base">
           A glimpse of what you'll discover
         </p>
 
@@ -368,11 +366,11 @@ function HomePage() {
       </section>
 
       {/* ==== MEET BOOK LOVERS ==== */}
-      <section className="py-8 md:py-16 px-4">
-        <h2 className="text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-2">
+      <section className="py-6 sm:py-8 md:py-16 px-3 sm:px-4">
+        <h2 className="text-lg sm:text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-2">
           Join Our Community
         </h2>
-        <p className="text-center text-[var(--primary)]/60 mb-6 md:mb-8 text-sm md:text-base">
+        <p className="text-center text-[var(--primary)]/60 mb-4 sm:mb-6 md:mb-8 text-xs sm:text-sm md:text-base">
           Connect with readers from around the world
         </p>
 

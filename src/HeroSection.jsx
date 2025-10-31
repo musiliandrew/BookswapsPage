@@ -65,7 +65,7 @@ const HeroSection = () => {
   const currentLoad = loadState[currentIndex];
 
   return (
-    <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
+    <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] w-full overflow-hidden">
       {/* ---------- BACKGROUND IMAGE ---------- */}
       <div className="absolute inset-0">
         {currentLoad === 'loaded' ? (
@@ -96,14 +96,14 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
       {/* ---------- CONTENT ---------- */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <div className="bookish-glass bookish-shadow p-6 md:p-10 rounded-2xl max-w-xs md:max-w-4xl">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-3 sm:px-4">
+        <div className="bookish-glass bookish-shadow p-4 sm:p-6 md:p-10 rounded-xl md:rounded-2xl w-full max-w-xs sm:max-w-lg md:max-w-4xl">
           <motion.h1
             key={current.heading}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-5"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-5"
             style={{ color: 'var(--primary)', fontFamily: 'Lora, serif' }}
           >
             Welcome to BookSwaps
@@ -114,7 +114,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-2xl mx-auto"
+            className="text-sm sm:text-base md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto"
             style={{ color: 'var(--accent)', fontFamily: 'Open Sans, sans-serif' }}
           >
             The platform for book lovers to connect, share, and discover their next great read
@@ -130,7 +130,7 @@ const HeroSection = () => {
                 alert('Thank you! We\'ll notify you at ' + email);
               }
             }}
-            className="inline-block bookish-button-enhanced text-white px-6 md:px-10 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg hover:scale-105 transition-transform"
+            className="inline-block bookish-button-enhanced text-white px-5 sm:px-6 md:px-10 py-2.5 sm:py-3 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:scale-105 transition-transform"
             style={{
               fontFamily: 'Lora, serif',
               boxShadow: '0 4px 15px rgba(69, 106, 118, 0.3)',
