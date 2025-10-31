@@ -34,11 +34,9 @@ const heroImages = [
 /**
  * HeroSection
  * -----------------
- * Props:
- *   tagline      – string (used by the Coming-Soon overlay)
- *   description  – string (used by the Coming-Soon overlay)
+ * Clean hero section for coming soon page
  */
-const HeroSection = ({ tagline, description }) => {
+const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loadState, setLoadState] = useState({}); // { 0: 'loading' | 'loaded' | 'error' }
 
@@ -99,16 +97,16 @@ const HeroSection = ({ tagline, description }) => {
 
       {/* ---------- CONTENT ---------- */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <div className="bookish-glass bookish-shadow p-4 md:p-8 rounded-2xl max-w-xs md:max-w-3xl">
+        <div className="bookish-glass bookish-shadow p-6 md:p-10 rounded-2xl max-w-xs md:max-w-4xl">
           <motion.h1
             key={current.heading}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-5"
             style={{ color: 'var(--primary)', fontFamily: 'Lora, serif' }}
           >
-            {current.heading}
+            Welcome to BookSwaps
           </motion.h1>
 
           <motion.p
@@ -116,25 +114,30 @@ const HeroSection = ({ tagline, description }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm md:text-lg lg:text-xl mb-4 md:mb-6"
+            className="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-2xl mx-auto"
             style={{ color: 'var(--accent)', fontFamily: 'Open Sans, sans-serif' }}
           >
-            {current.subheading}
+            The platform for book lovers to connect, share, and discover their next great read
           </motion.p>
 
-          <motion.a
-            href={current.ctaLink}
+          <motion.button
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="inline-block bookish-button-enhanced text-white px-4 md:px-8 py-2 md:py-4 rounded-xl font-semibold text-sm md:text-lg"
+            onClick={() => {
+              const email = prompt('Enter your email to get notified when we launch:');
+              if (email) {
+                alert('Thank you! We\'ll notify you at ' + email);
+              }
+            }}
+            className="inline-block bookish-button-enhanced text-white px-6 md:px-10 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg hover:scale-105 transition-transform"
             style={{
               fontFamily: 'Lora, serif',
               boxShadow: '0 4px 15px rgba(69, 106, 118, 0.3)',
             }}
           >
-            {current.ctaText}
-          </motion.a>
+            Notify Me at Launch
+          </motion.button>
         </div>
       </div>
 

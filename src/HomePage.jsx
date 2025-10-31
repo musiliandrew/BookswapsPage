@@ -180,42 +180,17 @@ function HomePage() {
     }
   };
 
-  // ---------- Coming-Soon Overlay ----------
-  const ComingSoonOverlay = () => (
+  // ---------- Coming-Soon Badge ----------
+  const ComingSoonBadge = () => (
     <Motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center z-20 px-4"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.5 }}
+      className="absolute top-4 right-4 z-30 bg-gradient-to-r from-[#D4A017] to-[#456A76] px-4 py-2 rounded-full shadow-lg"
     >
-      <h1 className="text-5xl md:text-8xl font-bold font-['Lora'] text-white mb-4 animate-pulse">
-        BookSwaps Coming Soon!!
-      </h1>
-
-      <p className="text-lg md:text-2xl text-white text-center max-w-2xl mb-6">
-        BookSwaps: The best platform for book lovers to hangout, solve and
-        discuss mysteries, belong to a society.
-      </p>
-
-      <div className="bg-white/20 p-6 rounded-xl mb-6 text-center max-w-xl">
-        <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-          Version 2.0 Teaser
-        </h3>
-        <p className="text-base md:text-lg text-white">
-          Inbuilt SenecaAI – Your Book philosopher companion, help you
-          understand and write pieces for you.
-        </p>
-      </div>
-
-      <p className="text-base md:text-lg text-white/90 text-center max-w-3xl mb-8">
-        BookSwaps is where people manage their hard-copy books online, build
-        their presence with a personal catalogue, find, meet, share and network
-        with others…
-      </p>
-
-      <div className="flex flex-col sm:flex-row gap-4">
-        <LoginCTA className="px-6 py-3 text-lg font-semibold text-white border-2 border-white rounded-full hover:bg-white hover:text-black transition-all" />
-        <SignupCTA className="px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-transparent to-white/20 rounded-full hover:bg-white/30 transition-all" />
-      </div>
+      <span className="text-white font-['Lora'] font-semibold text-sm md:text-base">
+        Coming Soon
+      </span>
     </Motion.div>
   );
 
@@ -277,20 +252,42 @@ function HomePage() {
         
       </nav>
 
-      {/* ==== HERO + COMING-SOON OVERLAY ==== */}
+      {/* ==== HERO + COMING-SOON BADGE ==== */}
       <div className="relative">
-        <HeroSection
-          tagline="BookSwaps: The best platform for book lovers to hangout, solve and discuss mysteries, belong to a society."
-          description="Version 2.0: Inbuilt SenecaAI – Your Book philosopher companion, help you understand and write pieces for you. Manage your hard-copy books online, build your catalogue, find, meet, share and network with others..."
-        />
-        <ComingSoonOverlay />
+        <HeroSection />
+        <ComingSoonBadge />
+
+        {/* Version 2.0 SenecaAI Teaser */}
+        <Motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="max-w-4xl mx-auto px-4 -mt-8 md:-mt-12 relative z-20"
+        >
+          <div className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-2xl border-2 border-[#D4A017]/30">
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <span className="text-xs md:text-sm font-semibold text-[#D4A017] bg-[#D4A017]/10 px-3 py-1 rounded-full">
+                V2.0 Preview
+              </span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold font-['Lora'] text-[#456A76] text-center mb-3">
+              Meet SenecaAI
+            </h3>
+            <p className="text-base md:text-lg text-[#456A76]/80 text-center">
+              Your personal book philosopher companion. Get insights, summaries, and let AI help you understand and write about your favorite reads.
+            </p>
+          </div>
+        </Motion.div>
       </div>
 
       {/* ==== FEATURES ==== */}
-      <section className="py-8 md:py-16 px-4">
-        <h2 className="text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-6 md:mb-8">
-          Why Choose BookSwaps?
+      <section className="py-8 md:py-16 px-4 mt-8">
+        <h2 className="text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-2">
+          What's Coming
         </h2>
+        <p className="text-center text-[var(--primary)]/60 mb-6 md:mb-8 text-sm md:text-base">
+          Features we're building for book lovers like you
+        </p>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {mockFeatures.map((f, i) => (
             <Motion.div
@@ -308,9 +305,12 @@ function HomePage() {
 
       {/* ==== TRENDING BOOKS ==== */}
       <section className="py-8 md:py-16 px-4 bg-[var(--secondary)]">
-        <h2 className="text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-6 md:mb-8">
-          Trending Books
+        <h2 className="text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-2">
+          Explore Trending Books
         </h2>
+        <p className="text-center text-[var(--primary)]/60 mb-6 md:mb-8 text-sm md:text-base">
+          A glimpse of what you'll discover
+        </p>
 
         {isLoading ? (
           <div className="flex justify-center">
@@ -369,9 +369,12 @@ function HomePage() {
 
       {/* ==== MEET BOOK LOVERS ==== */}
       <section className="py-8 md:py-16 px-4">
-        <h2 className="text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-6 md:mb-8">
-          Meet Book Lovers
+        <h2 className="text-xl md:text-3xl font-['Lora'] text-[var(--primary)] text-center mb-2">
+          Join Our Community
         </h2>
+        <p className="text-center text-[var(--primary)]/60 mb-6 md:mb-8 text-sm md:text-base">
+          Connect with readers from around the world
+        </p>
 
         <div className="relative max-w-full mx-auto px-4">
           <button
